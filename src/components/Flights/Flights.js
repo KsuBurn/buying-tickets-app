@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import FlightFavourites from '../FlightsFavourites/FlightFavourites';
 import FlightsBrowse from '../FlightsBrowse/FlightsBrowse';
@@ -6,12 +6,9 @@ import {Container, Header, Content, Tab, Tabs} from 'native-base';
 
 
 const Flights = () => {
-  const [tab, setTab] = useState('browse');
-
 
   return (
     <Container>
-      {/*<Header hasTabs/>*/}
       <Tabs
         initialPage={1}
         tabBarUnderlineStyle={styles.tabBarUnderline}

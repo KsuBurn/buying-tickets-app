@@ -14,5 +14,69 @@
     },
     "airlines": "Aeroflot",
     "isFavorite": false
+  },
+  {
+    "id": 1,
+    "departureCity": "Moscow",
+    "departureAirport": "SVO",
+    "arrivalCity": "New York",
+    "arrivalAirport": "JFK",
+    "price": "23 924",
+    "date": {
+      "departureDate": "28 June, 2020",
+      "departureTime": "14:50",
+      "arrivalDate": "28 June, 2020",
+      "arrivalTime": "14:50"
+    },
+    "airlines": "Aeroflot",
+    "isFavorite": false
+  },
+  {
+    "id": 2,
+    "departureCity": "Moscow",
+    "departureAirport": "SVO",
+    "arrivalCity": "New York",
+    "arrivalAirport": "JFK",
+    "price": "23 924",
+    "date": {
+      "departureDate": "28 June, 2020",
+      "departureTime": "14:50",
+      "arrivalDate": "28 June, 2020",
+      "arrivalTime": "14:50"
+    },
+    "airlines": "Aeroflot",
+    "isFavorite": false
+  },
+  {
+    "id": 3,
+    "departureCity": "Moscow",
+    "departureAirport": "SVO",
+    "arrivalCity": "New York",
+    "arrivalAirport": "JFK",
+    "price": "23 924",
+    "date": {
+      "departureDate": "28 June, 2020",
+      "departureTime": "14:50",
+      "arrivalDate": "28 June, 2020",
+      "arrivalTime": "14:50"
+    },
+    "airlines": "Aeroflot",
+    "isFavorite": false
+  },
+  {
+    "id": 4,
+    "departureCity": "Moscow",
+    "departureAirport": "SVO",
+    "arrivalCity": "New York",
+    "arrivalAirport": "JFK",
+    "price": "23 924",
+    "date": {
+      "departureDate": "28 June, 2020",
+      "departureTime": "14:50",
+      "arrivalDate": "28 June, 2020",
+      "arrivalTime": "14:50"
+    },
+    "airlines": "Aeroflot",
+    "isFavorite": false
   }
 ]
