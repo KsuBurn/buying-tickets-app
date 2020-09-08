@@ -1,56 +1,53 @@
-import React, {useState} from 'react';
-import {Container, Header, Content, Card, CardItem, Text, Body} from 'native-base';
+import React from 'react';
+import {Card, CardItem, Text} from 'native-base';
 import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 
 const FlightCard = ({item}) => {
   return (
-    // <Container>
-      <Card style={{ marginBottom: 20}}>
-        <CardItem>
-          <TouchableOpacity style={styles.wrap}>
-            <View style={styles.infoWrap}>
-              <View style={styles.planeWrap}>
+    <Card style={{marginBottom: 20}}>
+      <CardItem>
+        <TouchableOpacity style={styles.wrap}>
+          <View style={styles.infoWrap}>
+            <View style={styles.planeWrap}>
+              <Image
+                source={require('../../../assets/img/plane.png')}
+              />
+            </View>
+            <View style={styles.info}>
+              <View style={styles.cities}>
+                <Text style={styles.city}>{item.departureCity}</Text>
                 <Image
-                  source={require('../../../assets/img/plane.png')}
+                  source={require('../../../assets/img/arrow.png')}
                 />
-              </View>
-              <View style={styles.info}>
-                <View style={styles.cities}>
-                  <Text style={styles.city}>{item.departureCity}</Text>
-                  <Image
-                    source={require('../../../assets/img/arrow.png')}
-                  />
-                  <Text style={styles.city}>
-                    {item.arrivalCity}
-                  </Text>
-                </View>
-                <Text style={styles.additionalInfo}>
-                  {item.departureAirport} - {item.date.departureDate} - {item.date.departureTime}
-                </Text>
-                <Text style={styles.additionalInfo}>
-                  {item.airlines}
+                <Text style={styles.city}>
+                  {item.arrivalCity}
                 </Text>
               </View>
-              <TouchableOpacity>
-                <Image
-                  source={require('../../../assets/img/like.png')}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.priceWrap}>
-              <Text style={styles.priceTitle}>
-                Price:
+              <Text style={styles.additionalInfo}>
+                {item.departureAirport} - {item.date.departureDate} - {item.date.departureTime}
               </Text>
-              <Text style={styles.priceNumber}>
-                {item.price} ₽
+              <Text style={styles.additionalInfo}>
+                {item.airlines}
               </Text>
             </View>
-
-          </TouchableOpacity>
-
-        </CardItem>
-      </Card>
-    // </Container>
+            <TouchableOpacity>
+              {console.log(item.isFavourite)}
+              <Image
+                source={item.isFavourite ? require('../../../assets/img/like_active.png') : require('../../../assets/img/like.png')}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.priceWrap}>
+            <Text style={styles.priceTitle}>
+              Price:
+            </Text>
+            <Text style={styles.priceNumber}>
+              {item.price} ₽
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </CardItem>
+    </Card>
   );
 };
 
@@ -119,6 +116,6 @@ const styles = StyleSheet.create({
     letterSpacing: -0.408,
     fontFamily: 'SF_Pro_Text',
   }
-})
+});
 
 export default FlightCard;

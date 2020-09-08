@@ -1,15 +1,14 @@
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStore} from 'redux';
 import { Provider } from 'react-redux'
 import RouteApp from './src/routes/RouteApp';
-import {reducers} from './src/reducers';
+import reducers from './src/reducers';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
-const store = createStore(reducers);
+export const store = createStore(reducers);
 
 const App = () => {
   const [isReady, setIsReady] = useState(false);

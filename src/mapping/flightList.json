@@ -13,7 +13,7 @@
       "arrivalTime": "14:50"
     },
     "airlines": "Aeroflot",
-    "isFavorite": false
+    "isFavourite": true
   },
   {
     "id": 1,
@@ -29,7 +29,7 @@
       "arrivalTime": "14:50"
     },
     "airlines": "Aeroflot",
-    "isFavorite": false
+    "isFavourite": false
   },
   {
     "id": 2,
@@ -45,7 +45,7 @@
       "arrivalTime": "14:50"
     },
     "airlines": "Aeroflot",
-    "isFavorite": false
+    "isFavourite": true
   },
   {
     "id": 3,
@@ -61,7 +61,7 @@
       "arrivalTime": "14:50"
     },
     "airlines": "Aeroflot",
-    "isFavorite": false
+    "isFavourite": false
   },
   {
     "id": 4,
@@ -77,6 +77,6 @@
       "arrivalTime": "14:50"
     },
     "airlines": "Aeroflot",
-    "isFavorite": false
+    "isFavourite": false
   }
 ]

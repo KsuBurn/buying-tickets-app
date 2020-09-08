@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import flightList from '../../mapping/flightList.json';
 import FlightCard from '../FlightCard/FlightCard';
+import {connect} from 'react-redux';
+import {flightListAction} from '../../actions';
 
-const FlightsBrowse = () => {
+const FlightsBrowse = ({flightData}) => {
   return (
     <View style={styles.listWrap}>
       <FlatList
         styles={{padding: 20}}
-        data={flightList}
+        data={flightData}
         renderItem={(({item}) => (
           <View key={item.id.toString()} style={styles.flightWrap}>
             <FlightCard item={item}/>
@@ -28,4 +29,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FlightsBrowse;
+const mapStateToProps = state => {
+  return state.flightsData;
+};
+
+export default connect(mapStateToProps,{flightListAction})(FlightsBrowse);

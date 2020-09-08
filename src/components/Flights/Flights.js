@@ -1,31 +1,49 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import FlightFavourites from '../FlightsFavourites/FlightFavourites';
 import FlightsBrowse from '../FlightsBrowse/FlightsBrowse';
 import {Container, Header, Content, Tab, Tabs} from 'native-base';
-
+import {store} from '../../../App';
+import {flightListAction} from '../../actions';
+import flightList from '../../mapping/flightList.json';
 
 const Flights = () => {
+  const [flightData, setFlightData] = useState([]);
+
+  useEffect(() => {
+    store.dispatch(flightListAction(flightList));
+    setFlightData(store.getState().flightsData.flightList);
+  });
 
   return (
     <Container>
+      <Header hasTabs transparent={true}/>
       <Tabs
         initialPage={1}
         tabBarUnderlineStyle={styles.tabBarUnderline}
       >
-        <Tab heading="Favourites" >
-          <FlightFavourites/>
+        <Tab
+          heading="Favourites"
+          tabStyle={{backgroundColor: '#fff'}}
+          activeTabStyle={{backgroundColor: '#fff'}}
+          textStyle={{color: '#000'}}
+          activeTextStyle={{color: '#000'}}
+        >
+          <FlightFavourites flightData={flightData}/>
         </Tab>
-        <Tab heading="Browse">
-          <FlightsBrowse/>
+        <Tab
+          heading="Browse"
+          tabStyle={{backgroundColor: '#fff'}}
+          activeTabStyle={{backgroundColor: '#fff'}}
+          textStyle={{color: '#000'}}
+          activeTextStyle={{color: '#000'}}
+          >
+          <FlightsBrowse flightData={flightData}/>
         </Tab>
       </Tabs>
     </Container>
   );
 };
-
-let colors = [ "red", "green",  "blue", ];
-// let linearGradient = new LinearGradient(90.99, '#3C4CAD' -37.36, '#00C3FF', 107.72, '#F04393', 107.73);
 
 const styles = StyleSheet.create({
   tabContainer: {
@@ -34,7 +52,7 @@ const styles = StyleSheet.create({
   },
   tabBarUnderline: {
     borderRadius: 2,
-    // backgroundColor: linearGradient
+    backgroundColor: 'blue'
   }
 })
 

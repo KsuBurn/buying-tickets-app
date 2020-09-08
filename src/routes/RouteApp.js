@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const RouteApp = () => {
   return (
-    <Stack.Navigator initialRouteName='Flights'>
+    <Stack.Navigator initialRouteName='Flights'  headerMode='none'>
       <Stack.Screen
         name='Flights'
         component={Flights}
