@@ -2,11 +2,18 @@ import React from 'react';
 import {Card, CardItem, Text} from 'native-base';
 import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 
-const FlightCard = ({item}) => {
+const FlightCard = ({item, navigate}) => {
+  const onClickFlightCard = () => {
+    navigate('FightScreen', {item: item})
+  };
+
   return (
     <Card style={{marginBottom: 20}}>
       <CardItem>
-        <TouchableOpacity style={styles.wrap}>
+        <TouchableOpacity
+          style={styles.wrap}
+          onPress={() => onClickFlightCard()}
+        >
           <View style={styles.infoWrap}>
             <View style={styles.planeWrap}>
               <Image
@@ -30,8 +37,9 @@ const FlightCard = ({item}) => {
                 {item.airlines}
               </Text>
             </View>
-            <TouchableOpacity>
-              {console.log(item.isFavourite)}
+            <TouchableOpacity
+              style={styles.like}
+            >
               <Image
                 source={item.isFavourite ? require('../../../assets/img/like_active.png') : require('../../../assets/img/like.png')}
               />
@@ -115,6 +123,10 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     letterSpacing: -0.408,
     fontFamily: 'SF_Pro_Text',
+  },
+  like: {
+    width: 20,
+    height: 17
   }
 });
 
