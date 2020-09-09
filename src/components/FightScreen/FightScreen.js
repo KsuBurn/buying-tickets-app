@@ -1,16 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Image, StyleSheet, View, TouchableOpacity, Text, ScrollView} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import * as GestureHandler from 'react-native-gesture-handler';
 
 import SwipeUpDown from 'react-native-swipe-up-down';
+import {connect} from 'react-redux';
+import {flightListAction} from '../../actions';
+import {store} from '../../../App';
+import {addToFavourites} from '../../utils/addToFavourites';
 
 const {Swipeable} = GestureHandler;
 
 const FightScreen = (props) => {
-  const [swipeUp, setSwipeUp] = useState(42)
-  const {item} = props.route.params;
+  const [isFavourite, setIsFavourite] = useState();
+  const [swipeUp, setSwipeUp] = useState(42);
+  const {item, flightData} = props.route.params;
+
+  useEffect(() => {
+    setIsFavourite(item.isFavourite);
+  }, []);
+
+  const onClickFavourite = (flightList, flightItemId) => {
+    setIsFavourite(!isFavourite);
+    const newFlightList = addToFavourites(flightList, flightItemId);
+    store.dispatch(flightListAction(newFlightList));
+  };
 
   const config = {
     velocityThreshold: 0,
@@ -32,10 +47,10 @@ const FightScreen = (props) => {
          <View style={[styles.infoWrap, {bottom: swipeUp}]}>
            <TouchableOpacity
              style={styles.like}
-             onPress={() => console.log('like')}
+             onPress={() => onClickFavourite(flightData, item.id)}
            >
              <Image
-               source={item.isFavourite ? require('../../../assets/img/like_active.png') : require('../../../assets/img/like.png')}
+               source={isFavourite ? require('../../../assets/img/like_active.png') : require('../../../assets/img/like.png')}
              />
            </TouchableOpacity>
            <View style={styles.flightInfo}>
@@ -173,4 +188,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FightScreen;
+const mapStateToProps = state => {
+  return state.flightsData;
+};
+
+export default connect(mapStateToProps,{flightListAction})(FightScreen);

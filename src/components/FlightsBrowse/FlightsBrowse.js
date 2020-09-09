@@ -4,7 +4,7 @@ import FlightCard from '../FlightCard/FlightCard';
 import {connect} from 'react-redux';
 import {flightListAction} from '../../actions';
 
-const FlightsBrowse = ({flightData, navigate}) => {
+const FlightsBrowse = ({flightData, navigate, onClickFavourite}) => {
   return (
     <View style={styles.listWrap}>
       <FlatList
@@ -13,8 +13,10 @@ const FlightsBrowse = ({flightData, navigate}) => {
         renderItem={(({item}) => (
           <View key={item.id.toString()} style={styles.flightWrap}>
             <FlightCard
-              item={item}
               navigate={navigate}
+              item={item}
+              onClickFavourite={onClickFavourite}
+              flightData={flightData}
             />
           </View>
         ))}

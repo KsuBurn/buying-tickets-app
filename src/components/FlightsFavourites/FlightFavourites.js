@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 import FlightCard from '../FlightCard/FlightCard';
 
-const FlightFavourites = ({flightData}) => {
+const FlightFavourites = ({flightData, navigate, onClickFavourite}) => {
   return (
     <View style={styles.listWrap}>
       <FlatList
@@ -11,7 +11,12 @@ const FlightFavourites = ({flightData}) => {
         data={flightData.filter(item => item.isFavourite)}
         renderItem={(({item}) => (
           <View key={item.id.toString()} style={styles.flightWrap}>
-            <FlightCard item={item}/>
+            <FlightCard
+              navigate={navigate}
+              item={item}
+              onClickFavourite={onClickFavourite}
+              flightData={flightData}
+            />
           </View>
         ))}
       />
