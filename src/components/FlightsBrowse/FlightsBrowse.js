@@ -1,8 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import FlightCard from '../FlightCard/FlightCard';
-import {connect} from 'react-redux';
-import {flightListAction} from '../../actions';
 
 const FlightsBrowse = ({flightData, navigate, onClickFavourite}) => {
   return (
@@ -34,8 +32,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = state => {
-  return state.flightsData;
-};
-
-export default connect(mapStateToProps,{flightListAction})(FlightsBrowse);
+export default FlightsBrowse;

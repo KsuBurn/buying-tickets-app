@@ -4,7 +4,7 @@ import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 
 const FlightCard = ({item, navigate, onClickFavourite, flightData}) => {
   const onClickFlightCard = () => {
-    navigate('FightScreen', {item: item, flightData: flightData})
+    navigate('FlightScreen', {item: item, flightData: flightData})
   };
 
   return (
