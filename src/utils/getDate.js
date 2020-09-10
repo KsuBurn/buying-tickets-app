@@ -1,12 +1,9 @@
 export const getDate = (milliseconds) => {
-  const dayAndMonth = new Date(milliseconds).toLocaleDateString(
-    'en-GB',
-    {
-      day: 'numeric',
-      month: 'short'
-    }
-  );
+  const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+  const day = new Date(milliseconds).getDate();
+  const month = monthArr[new Date(milliseconds).getMonth()];
   const year = new Date(milliseconds).getFullYear();
 
-  return `${dayAndMonth}, ${year}`
+  return `${day} ${month}, ${year}`
 };
