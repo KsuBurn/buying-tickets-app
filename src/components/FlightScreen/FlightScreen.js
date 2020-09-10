@@ -5,6 +5,8 @@ import {flightListAction} from '../../actions';
 import {store} from '../../../App';
 import {addToFavourites} from '../../utils/addToFavourites';
 import {sendToStorage} from '../../utils/sendToStorage';
+import {getDate} from '../../utils/getDate';
+import {getTime} from '../../utils/getTime';
 
 const FlightScreen = (props) => {
   const [isFavourite, setIsFavourite] = useState();
@@ -46,7 +48,7 @@ const FlightScreen = (props) => {
         </TouchableOpacity>
         <View style={styles.flightInfo}>
           <View>
-            <Text style={styles.flightData}>{item.date.departureDate}</Text>
+            <Text style={styles.flightData}>{getDate(item.date.departureDate)}</Text>
             <Text style={styles.airport}>{item.departureAirport}</Text>
             <Text style={styles.flightData}>{item.departureCity}</Text>
           </View>
@@ -54,7 +56,7 @@ const FlightScreen = (props) => {
             source={require('../../../assets/img/arrow2.png')}
           />
           <View>
-            <Text style={styles.flightData}>{item.date.arrivalTime}</Text>
+            <Text style={styles.flightData}>{getTime(item.date.departureDate)}</Text>
             <Text style={styles.airport}>{item.arrivalAirport}</Text>
             <Text style={styles.flightData}>{item.arrivalCity}</Text>
           </View>
@@ -75,7 +77,7 @@ const FlightScreen = (props) => {
           />
           <View style={styles.addInfo}>
             <Text style={styles.addInfo_title}>Boarding</Text>
-            <Text style={styles.addInfo_value}>{item.date.arrivalTime}</Text>
+            <Text style={styles.addInfo_value}>{getTime(item.date.arrivalDate - 1800000)}</Text>
           </View>
         </LinearGradient>
         <View>

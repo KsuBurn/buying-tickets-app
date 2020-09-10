@@ -22,7 +22,6 @@ const Flights = (props) => {
     if (data) {
       setFlightData(JSON.parse(data));
     } else {
-      console.log('sdfsdfs')
       store.dispatch(flightListAction(flightList));
       sendToStorage('flightList', props.flightList);
       setFlightData(props.flightList);

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Card, CardItem, Text} from 'native-base';
 import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
+import {getDate} from '../../utils/getDate';
+import {getTime} from '../../utils/getTime';
 
 const FlightCard = ({item, navigate, onClickFavourite, flightData}) => {
   const onClickFlightCard = () => {
@@ -31,7 +33,7 @@ const FlightCard = ({item, navigate, onClickFavourite, flightData}) => {
                 </Text>
               </View>
               <Text style={styles.additionalInfo}>
-                {item.departureAirport} - {item.date.departureDate} - {item.date.departureTime}
+                {item.departureAirport} - {getDate(item.date.departureDate)} - {getTime(item.date.departureDate)}
               </Text>
               <Text style={styles.additionalInfo}>
                 {item.airlines}

@@ -7,10 +7,8 @@
     "arrivalAirport": "JFK",
     "price": "23 924",
     "date": {
-      "departureDate": "28 June, 2020",
-      "departureTime": "14:50",
-      "arrivalDate": "28 June, 2020",
-      "arrivalTime": "14:50"
+      "departureDate": 1589669070652,
+      "arrivalDate": 1589669070652
     },
     "airlines": "Aeroflot",
     "isFavourite": true
@@ -23,10 +21,8 @@
     "arrivalAirport": "JFK",
     "price": "23 924",
     "date": {
-      "departureDate": "28 June, 2020",
-      "departureTime": "14:50",
-      "arrivalDate": "28 June, 2020",
-      "arrivalTime": "14:50"
+      "departureDate": 1589669070652,
+      "arrivalDate": 1589669070652
     },
     "airlines": "Aeroflot",
     "isFavourite": false
@@ -39,10 +35,8 @@
     "arrivalAirport": "JFK",
     "price": "23 924",
     "date": {
-      "departureDate": "28 June, 2020",
-      "departureTime": "14:50",
-      "arrivalDate": "28 June, 2020",
-      "arrivalTime": "14:50"
+      "departureDate": 1589669070652,
+      "arrivalDate": 1589669070652
     },
     "airlines": "Aeroflot",
     "isFavourite": true
@@ -55,10 +49,8 @@
     "arrivalAirport": "JFK",
     "price": "23 924",
     "date": {
-      "departureDate": "28 June, 2020",
-      "departureTime": "14:50",
-      "arrivalDate": "28 June, 2020",
-      "arrivalTime": "14:50"
+      "departureDate": 1589669070652,
+      "arrivalDate": 1589669070652
     },
     "airlines": "Aeroflot",
     "isFavourite": false
@@ -71,10 +63,8 @@
     "arrivalAirport": "JFK",
     "price": "23 924",
     "date": {
-      "departureDate": "28 June, 2020",
-      "departureTime": "14:50",
-      "arrivalDate": "28 June, 2020",
-      "arrivalTime": "14:50"
+      "departureDate": 1589669070652,
+      "arrivalDate": 1589669070652
     },
     "airlines": "Aeroflot",
     "isFavourite": false
