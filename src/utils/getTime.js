@@ -1,3 +1,3 @@
 export const getTime = (milliseconds) => {
-  return `${new Date(milliseconds).getHours()} : ${new Date(milliseconds).getMinutes()}`;
+  return `${new Date(milliseconds).getHours()}:${new Date(milliseconds).getMinutes()}`;
 };
